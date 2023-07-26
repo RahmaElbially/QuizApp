@@ -1,0 +1,251 @@
+*{
+    padding: o;
+    margin: 0;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes fadeRight{
+    0%{
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+body{
+    background-color: rgb(6, 108, 104);
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+#startExam h2{
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 28px;
+    color: white;
+    text-transform: capitalize;
+}
+#startExam .btn{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    color: rgb(6, 108, 104);
+    font-size: 20px;
+    padding: 22px;
+    border: 3px solid rgb(244, 157, 205);
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+#startExam .btn:hover{
+    background-color: rgb(6, 108, 104);
+    color: white;
+}
+.startExam-box.hide{
+    display: none;
+}
+.custom-box::before,
+.custom-box::after{
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+/* Instruction */
+.custom-box{
+    max-width: 700px;
+    background-color: white;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    animation: fadeRight 1s ease;
+}
+.custom-box.hide{
+    display: none;
+}
+#instruction h3{
+    font-size: 25px;
+    text-transform: capitalize;
+    font-family: cursive;
+}
+#instruction p{
+    font-size: 16px;
+    font-family: cursive;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.btn{
+    text-decoration: none;
+    background-color: rgb(6, 108, 104);
+    color: white;
+    font-size: 16px;
+    padding: 15px 45px;
+    border-radius: 10px;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(231, 226, 226);
+    color: rgb(6, 108, 104);
+    border: 2px solid rgb(6, 108, 104);
+}
+
+/* Questions */
+#questions h2{
+    font-size: 22px;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(6, 108, 104);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+#questions p{
+    font-size: 22px;
+    margin: 20px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 30px;
+}
+#questions .optionList .option{
+    background-color: #ccc;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+    animation: fadeIn 0.3s ease forwards;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+}
+#questions .optionList .option.correct::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    z-index: -1;
+    animation: slideInLeft 0.5s ease forwards;
+}
+#questions .optionList .option.wrong::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: -1;
+    animation: slideInLeft 0.5s ease forwards;
+}
+#questions .optionList .option.correct,#questions .optionList .option.wrong{
+    color: #fff;
+}
+#questions .optionList .option.already-answered{
+    pointer-events: none;
+}
+#questions .btn{
+    margin: 10px 0;
+}
+#questions .next:hover{
+    background-color: rgb(231, 226, 226);
+    color: rgb(6, 108, 104);
+    border: 2px solid rgb(6, 108, 104);
+}
+#questions .circles{
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    width: 95%;
+}
+#questions .circles div{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #ccc;
+    margin-right: 3px;
+    margin-top: 15px;
+}
+#questions .questionNumber,
+#questions .questionText,
+#questions .optionList,
+#questions .next,
+#questions .circles{
+    width: 100%;
+    float: left;
+}
+
+#questions .circles div.correct{
+    background-color: green;
+    background-image: url(images/check.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#questions .circles div.wrong{
+    background-color: red;
+    background-image: url(images/close.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* #questions.hide{
+    display: none;
+} */
+
+/* Results */
+#results{
+    text-align: center;
+}
+#results h2{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(6, 108, 104);
+    font-weight: bold;
+    line-height: 100px;
+}
+#results table{
+    border-collapse: collapse;
+    width: 97%;
+    margin-bottom: 50px;
+}
+#results tr ,#results td{
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    width: 50%;
+    font-size: 18px;
+}
+#results .btn{
+    margin-right: 20px;
+}

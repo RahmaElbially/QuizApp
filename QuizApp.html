@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;800&display=swap" rel="stylesheet">
+    <title>Quiz App</title>
+</head>
+<body>
+
+    <div id="startExam" class="startExam-box">
+        <h2>this quiz about your general information</h2>
+        <button class="btn" onclick="startExam()">start quiz</button>
+    </div> <!-- End Start Exam --> 
+
+    <div id="instruction" class="instruction-box custom-box hide">
+        <h3>instruction:</h3>
+        <p>Total number of questions : <span class="total-question"></span></p>
+        <button class="btn" onclick="startQuiz()">start quiz</button>
+    </div> <!-- End Instrucion -->
+
+    <div id="questions" class="questions-box custom-box hide">
+        <h2 class="questionNumber"></h2>
+        <p class="questionText"></p>
+        <div class="optionList" >
+            
+        </div>
+        <button class="btn" onclick="next()">Next</button>
+        <div class="circles">
+            
+        </div>
+    </div> <!-- End Questions -->
+
+    <div id="results" class="results-box custom-box hide">
+        <h2>Quiz Result</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Total Question</td>
+                    <td class="total-question"></td>
+                </tr>
+                <tr>
+                    <td>Attempt</td>
+                    <td class="total-attempt"></td>
+                </tr>
+                <tr>
+                    <td>Correct</td>
+                    <td class="total-correct"></td>
+                </tr>
+                <tr>
+                    <td>Wrong</td>
+                    <td class="total-wrong"></td>
+                </tr>
+                <tr>
+                    <td>Percentage</td>
+                    <td class="percentage"></td>
+                </tr>
+                <tr>
+                    <td>Your Total Score</td>
+                    <td class="total-score"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="links">
+            <button class="btn" onclick="tryAgainQuiz()">Try Again</button>
+            <button class="btn" onclick="goToHome()">Go To Home</button>
+        </div>
+    </div> <!-- End Results -->
+
+    <script src="JS/main.js"></script>
+</body>
+</html>
